@@ -1,0 +1,9 @@
+<package>
+  <description brief="pkg_cv_ros_tutorial_by_dhanuzch">
+     This package is a part of a tutorial series on "Integrating OpenCV with Robot Operating SYstem(ROS)" on Medium
+  </description>
+  <author>Dhanush Baktha/mr.dhanush29@gmail.com</author>
+  <license>BSD</license>
+  <url>http://www.ros.org/wiki/</url>
+  <depend package="rospy"/>
+</package>
