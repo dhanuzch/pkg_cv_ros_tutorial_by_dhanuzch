@@ -2,8 +2,6 @@
 
 import rospy
 import cv2
-import sys
-from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
@@ -13,7 +11,7 @@ class Camera1:
 
   def __init__(self):
     self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/camera/camera_1/image_raw", Image,self.callback)
+    self.image_sub = rospy.Subscriber("/camera_1/image_raw", Image,self.callback)
   
   def callback(self,data):
     try:
@@ -28,7 +26,7 @@ class Camera1:
     # Resize a 720x1280 image to 360x640 to fit it on the screen
     resized_image = cv2.resize(image, (360, 640)) 
 
-    cv2.imshow("/camera/camera_1/image_raw", resized_image)
+    cv2.imshow("Camera output", resized_image)
 
     # convert the resized image to b&w
     gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)

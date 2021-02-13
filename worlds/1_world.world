@@ -1,3 +1,5 @@
+<?xml version="1.0" ?>
+
 <sdf version='1.6'>
   <world name='default'>
     <plugin name='ros_link_attacher_plugin' filename='libgazebo_ros_link_attacher.so'/>
@@ -84,7 +86,6 @@
     </light>
     <model name='camera_1'>
       <plugin name='ros_camera_1' filename='libROSLogicalCameraPlugin.so'>
-        <robotNamespace>/camera</robotNamespace>
       </plugin>
       <link name='camera_1::camera_1_link'>
         <gravity>0</gravity>
@@ -157,7 +158,6 @@
           <visualize>0</visualize>
           <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
             <cameraName>camera_1</cameraName>
-            <robotNamespace>/camera</robotNamespace>
             <eventThreshold>10</eventThreshold>
             <cameraInfoTopicName>camera_1</cameraInfoTopicName>
           </plugin>
