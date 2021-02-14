@@ -1,5 +1,3 @@
-<?xml version="1.0" ?>
-
 <sdf version='1.6'>
   <world name='default'>
     <plugin name='ros_link_attacher_plugin' filename='libgazebo_ros_link_attacher.so'/>
@@ -132,8 +130,7 @@
       <direction>0.1 0.1 -1</direction>
     </light>
     <model name='camera_1'>
-      <plugin name='ros_camera_1' filename='libROSLogicalCameraPlugin.so'>
-      </plugin>
+      <plugin name='ros_camera_1' filename='libROSLogicalCameraPlugin.so'/>
       <link name='camera_1::camera_1_link'>
         <gravity>0</gravity>
         <inertial>
@@ -230,10 +227,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>579 403000000</sim_time>
-      <real_time>106 533192268</real_time>
-      <wall_time>1613191921 285658151</wall_time>
-      <iterations>105531</iterations>
+      <sim_time>643 754000000</sim_time>
+      <real_time>64 788918193</real_time>
+      <wall_time>1613320459 736261787</wall_time>
+      <iterations>64351</iterations>
       <model name='camera_1'>
         <pose frame=''>0.092671 1.85512 1.16786 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -255,10 +252,10 @@
         </link>
       </model>
       <model name='qr_wall'>
-        <pose frame=''>0.413666 0.521429 0 0 -0 1.57</pose>
+        <pose frame=''>0.444996 0.521404 0 0 -0 1.57</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose frame=''>0.413666 0.521429 0 0 -0 1.57</pose>
+          <pose frame=''>0.444996 0.521404 0 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>

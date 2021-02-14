@@ -24,21 +24,30 @@ class camera_1:
     
     image = cv_image
 
-    # Resize a 720x1280 image to 360x640 to fit it on the screen
     resized_image = cv2.resize(image, (360, 640)) 
 
-    cv2.imshow("Camera output", resized_image)
-
-    # convert the resized image to b&w
     gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
     thresh = 40
     img_bw = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)[1]
 
-    # decode the obtained qrcode
+    #cv2.imshow("B&W Image", gray)
+    #cv2.imshow("B&W Image /w threshold", img_bw)
+
     qr_result = decode(img_bw)
 
-    rospy.loginfo(qr_result)
+    #print (qr_result)
     
+    qr_data = qr_result[0].data
+    print qr_data
+
+    (x, y, w, h) = qr_result[0].rect
+
+    cv2.rectangle(resized_image, (x, y), (x + w, y + h), (0, 0, 255), 4)
+
+    text = "{}".format(qr_data)
+    cv2.putText(resized_image, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+    cv2.imshow("Camera output", resized_image)
+
     cv2.waitKey(5)
 
 def main():
