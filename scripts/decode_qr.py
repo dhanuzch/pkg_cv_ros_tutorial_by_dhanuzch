@@ -2,20 +2,21 @@
 
 import rospy
 import cv2
+
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
-
 from pyzbar.pyzbar import decode
 
-class Camera1:
+class camera_1:
 
   def __init__(self):
-    self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/camera_1/image_raw", Image,self.callback)
-  
+    self.image_sub = rospy.Subscriber("/camera_1/image_raw", Image, self.callback)
+
   def callback(self,data):
+    bridge = CvBridge()
+
     try:
-      cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+      cv_image = bridge.imgmsg_to_cv2(data, "bgr8")
     except CvBridgeError as e:
       rospy.logerr(e)
 
@@ -40,19 +41,16 @@ class Camera1:
     
     cv2.waitKey(5)
 
-
 def main():
-  
-  rospy.init_node('decode_qr', anonymous=True)
-
-  ic = Camera1()
-  
-  try:
-    rospy.spin()
-  except KeyboardInterrupt:
-    rospy.loginfo("Shutting down")
-  
-  cv2.destroyAllWindows()
+	camera_1()
+	
+	try:
+		rospy.spin()
+	except KeyboardInterrupt:
+		rospy.loginfo("Shutting down")
+	
+	cv2.destroyAllWindows()
 
 if __name__ == '__main__':
+    rospy.init_node('camera_read', anonymous=False)
     main()
