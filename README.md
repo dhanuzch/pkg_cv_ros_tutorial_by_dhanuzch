@@ -5,3 +5,7 @@ This is the repo consisting of the ROS package used in "Using OpenCV with Gazebo
 
 ## Link to the Medium article
 **[Part 0](https://dhanuzch.medium.com/using-opencv-with-gazebo-in-robot-operating-system-ros-part-0-getting-everything-set-up-b60d4b2e472e) | [Part 1](https://dhanuzch.medium.com/using-opencv-with-gazebo-in-robot-operating-system-ros-part-1-display-real-time-video-feed-a98c078c708b) | [Part 2](https://dhanuzch.medium.com/using-opencv-with-gazebo-in-robot-operating-system-ros-part-2-read-and-decode-a-qr-code-ed6ce5c298ca)** 
+
+Part 0 — Getting everything set up
+Part 1 — Display real-time video feed of 2D camera in gazebo
+Part 2 — Read and decode a QR Code present in Gazebo with pyzbar library
