@@ -38,7 +38,7 @@ class camera_1:
     #print (qr_result)
     
     qr_data = qr_result[0].data
-    print qr_data
+    print(qr_data)
 
     (x, y, w, h) = qr_result[0].rect
 
